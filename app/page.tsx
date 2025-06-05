@@ -1,5 +1,8 @@
 import Image from "next/image";
 import { socialLinks } from "./config";
+import { GitHubContributions } from "./components/github-contributions";
+import { DiscordStatus } from "./components/discord-status";
+import { SpotifyStatus } from "./components/spotify-status";
 
 export default function Page() {
   return (
@@ -16,30 +19,39 @@ export default function Page() {
         />
       </a>
       <h1 className="mb-8 text-2xl font-medium">Hello World! 👋</h1>
-      <div className="prose prose-neutral dark:prose-invert">
-        <p>
-          My name is <strong>Reinhart Barus</strong>, a 12th-grade student at
-          a private high school in Bandung. I’ve had a strong interest
-          in technology since I was a child. 🔍
-        </p>
+      <div className="max-w-2xl mx-auto">
+        <div className="prose prose-neutral dark:prose-invert">
+          <p>
+            My name is <strong>Reinhart Barus</strong>, a 12th-grade student at
+            a private high school in Bandung. I’ve had a strong interest in
+            technology since I was a child. 🔍
+          </p>
 
-        <p>
-          ⚡ That interest began with curiosity about electricity and eventually
-          grew into a passion for the digital world, especially after I started
-          learning <code>HTML</code> in junior high school. 💻
-        </p>
+          <p>
+            ⚡ That interest began with curiosity about electricity and
+            eventually grew into a passion for the digital world, especially
+            after I started learning <code>HTML</code> in junior high school. 💻
+          </p>
 
-        <p>
-          🚀 Currently, I’m focusing on frontend development using{" "}
-          <strong>React.js</strong> and continuously exploring other web
-          technologies. 🌐
-        </p>
+          <p>
+            🚀 Currently, I’m focusing on frontend development using{" "}
+            <strong>React.js</strong> and continuously exploring other web
+            technologies. 🌐
+          </p>
 
-        <p>
-          🎓 After graduation, I plan to pursue a degree in a technology-related
-          field such as <strong>Informatics Engineering</strong> or{" "}
-          <strong>Computer Science</strong>. 🎯
-        </p>
+          <p>
+            🎓 After graduation, I plan to pursue a degree in a
+            technology-related field such as{" "}
+            <strong>Informatics Engineering</strong> or{" "}
+            <strong>Computer Science</strong>. 🎯
+          </p>
+        </div>
+
+        <div className="mt-8 space-y-4">
+          <GitHubContributions />
+          <DiscordStatus />
+          <SpotifyStatus />
+        </div>
       </div>
     </section>
   );
