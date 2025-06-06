@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { projects } from "./project-data";
+import { ScrollAnimation } from "../components/scroll-animation";
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -10,7 +11,9 @@ export const metadata: Metadata = {
 export default function Projects() {
   return (
     <section>
-      <h1 className="mb-8 text-2xl font-medium">Reinhart's Projects 🛠️</h1>
+      <ScrollAnimation type="scale">
+        <h1 className="mb-8 text-2xl font-medium">Reinhart's Projects 🛠️</h1>
+      </ScrollAnimation>
       <div>
         {projects.map((project, index) => (
           <Link
@@ -21,10 +24,14 @@ export default function Projects() {
             rel="noopener noreferrer"
           >
             <div className="flex flex-col items-start justify-between w-full space-y-1 sm:flex-row sm:items-center sm:space-y-0 sm:space-x-2">
-              <h2 className="text-black dark:text-white">{project.title}</h2>
-              <p className="text-neutral-600 dark:text-neutral-400">
-                {project.description}
-              </p>
+              <ScrollAnimation type="slideRight">
+                <h2 className="text-black dark:text-white">{project.title}</h2>
+              </ScrollAnimation>
+              <ScrollAnimation type="slideLeft">
+                <p className="text-neutral-600 dark:text-neutral-400">
+                  {project.description}
+                </p>
+              </ScrollAnimation>
             </div>
           </Link>
         ))}
