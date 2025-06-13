@@ -1,6 +1,6 @@
 export const metaData = {
   baseUrl: "http://localhost:3000",
-  title: "Reinhart Barus 👨‍💻",
+  title: "Reinhart Barus",
   name: "Reinhart",
   ogImage: "/opengraph-image.png",
   description:

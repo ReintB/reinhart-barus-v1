@@ -13,7 +13,7 @@ export default function BlogPosts() {
   return (
     <section>
       <ScrollAnimation type="scale">
-        <h1 className="mb-8 text-2xl font-medium">Reinhart's Blog 📝</h1>
+        <h1 className="mb-8 text-2xl font-medium">Reinhart's Blog</h1>
       </ScrollAnimation>
       <div>
         {allBlogs

@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { useForm } from 'react-hook-form';
-import { useState } from 'react';
+import { motion } from "framer-motion";
+import { useForm } from "react-hook-form";
+import { useState } from "react";
 
 type FormData = {
   name: string;
@@ -18,26 +18,26 @@ export function Contact() {
     formState: { errors, isSubmitting },
   } = useForm<FormData>();
 
-  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
 
   const onSubmit = async (data: FormData) => {
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
+      const response = await fetch("/api/contact", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
       });
 
-      if (!response.ok) throw new Error('Failed to send message');
+      if (!response.ok) throw new Error("Failed to send message");
 
-      setStatus('success');
+      setStatus("success");
       reset();
-      setTimeout(() => setStatus('idle'), 3000);
+      setTimeout(() => setStatus("idle"), 3000);
     } catch (error) {
-      setStatus('error');
-      setTimeout(() => setStatus('idle'), 3000);
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 3000);
     }
   };
 
@@ -52,13 +52,16 @@ export function Contact() {
         <h2 className="mb-8 text-2xl font-medium">Get in Touch</h2>
         <form onSubmit={handleSubmit(onSubmit)} className="max-w-2xl space-y-6">
           <div>
-            <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">
+            <label
+              htmlFor="name"
+              className="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300"
+            >
               Name
             </label>
             <input
               type="text"
               id="name"
-              {...register('name', { required: 'Name is required' })}
+              {...register("name", { required: "Name is required" })}
               className="w-full px-4 py-2 bg-white border border-gray-300 rounded-md dark:border-gray-600 dark:bg-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               disabled={isSubmitting}
               placeholder="Your name"
@@ -69,17 +72,20 @@ export function Contact() {
           </div>
 
           <div>
-            <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">
+            <label
+              htmlFor="email"
+              className="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300"
+            >
               Email
             </label>
             <input
               type="email"
               id="email"
-              {...register('email', {
-                required: 'Email is required',
+              {...register("email", {
+                required: "Email is required",
                 pattern: {
                   value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                  message: 'Invalid email address',
+                  message: "Invalid email address",
                 },
               })}
               className="w-full px-4 py-2 bg-white border border-gray-300 rounded-md dark:border-gray-600 dark:bg-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -87,24 +93,31 @@ export function Contact() {
               placeholder="your.email@example.com"
             />
             {errors.email && (
-              <p className="mt-1 text-sm text-red-500">{errors.email.message}</p>
+              <p className="mt-1 text-sm text-red-500">
+                {errors.email.message}
+              </p>
             )}
           </div>
 
           <div>
-            <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">
+            <label
+              htmlFor="message"
+              className="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300"
+            >
               Message
             </label>
             <textarea
               id="message"
               rows={5}
-              {...register('message', { required: 'Message is required' })}
+              {...register("message", { required: "Message is required" })}
               className="w-full px-4 py-2 bg-white border border-gray-300 rounded-md resize-none dark:border-gray-600 dark:bg-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               disabled={isSubmitting}
               placeholder="Your message here..."
             />
             {errors.message && (
-              <p className="mt-1 text-sm text-red-500">{errors.message.message}</p>
+              <p className="mt-1 text-sm text-red-500">
+                {errors.message.message}
+              </p>
             )}
           </div>
 
@@ -116,10 +129,10 @@ export function Contact() {
               disabled={isSubmitting}
               className="px-6 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {isSubmitting ? 'Sending...' : 'Send Message'}
+              {isSubmitting ? "Sending..." : "Send Message"}
             </motion.button>
 
-            {status === 'success' && (
+            {status === "success" && (
               <motion.p
                 initial={{ opacity: 0, x: 10 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -129,7 +142,7 @@ export function Contact() {
               </motion.p>
             )}
 
-            {status === 'error' && (
+            {status === "error" && (
               <motion.p
                 initial={{ opacity: 0, x: 10 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -143,4 +156,4 @@ export function Contact() {
       </motion.div>
     </section>
   );
-} 
+}

@@ -12,7 +12,7 @@ export default function Projects() {
   return (
     <section>
       <ScrollAnimation type="scale">
-        <h1 className="mb-8 text-2xl font-medium">Reinhart's Projects 🛠️</h1>
+        <h1 className="mb-8 text-2xl font-medium">Reinhart's Projects</h1>
       </ScrollAnimation>
       <div>
         {projects.map((project, index) => (
