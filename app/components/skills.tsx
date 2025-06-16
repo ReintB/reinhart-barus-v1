@@ -1,19 +1,9 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { 
-  FaReact, 
-  FaGit, 
-  FaFigma,
-  FaCode,
-  FaTerminal
-} from 'react-icons/fa';
-import { 
-  SiNextdotjs, 
-  SiTypescript, 
-  SiTailwindcss
-} from 'react-icons/si';
-import { TbBrandHtml5, TbBrandCss3 } from 'react-icons/tb';
+import { motion } from "framer-motion";
+import { FaReact, FaGit, FaFigma, FaCode, FaTerminal } from "react-icons/fa";
+import { SiNextdotjs, SiTypescript, SiTailwindcss } from "react-icons/si";
+import { TbBrandHtml5, TbBrandCss3 } from "react-icons/tb";
 
 const skills = [
   {
@@ -24,8 +14,8 @@ const skills = [
       { name: "TypeScript", icon: SiTypescript },
       { name: "Tailwind CSS", icon: SiTailwindcss },
       { name: "HTML5", icon: TbBrandHtml5 },
-      { name: "CSS3", icon: TbBrandCss3 }
-    ]
+      { name: "CSS3", icon: TbBrandCss3 },
+    ],
   },
   {
     category: "Tools & Others",
@@ -33,9 +23,9 @@ const skills = [
       { name: "Git", icon: FaGit },
       { name: "Visual Studio Code", icon: FaCode },
       { name: "Cursor AI", icon: FaTerminal },
-      { name: "Figma", icon: FaFigma }
-    ]
-  }
+      { name: "Figma", icon: FaFigma },
+    ],
+  },
 ];
 
 export function Skills() {
@@ -59,8 +49,6 @@ export function Skills() {
               {skillGroup.techs.map((tech) => (
                 <motion.span
                   key={tech.name}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
                   className="flex items-center gap-2 px-4 py-2 text-sm font-medium bg-white border border-gray-100 shadow-sm dark:bg-gray-800 rounded-xl dark:border-gray-700"
                 >
                   <tech.icon className="w-5 h-5" />
@@ -73,4 +61,4 @@ export function Skills() {
       </div>
     </section>
   );
-} 
+}
