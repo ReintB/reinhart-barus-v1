@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 export function ReadingProgress() {
   const [completion, setCompletion] = useState(0);
@@ -8,17 +8,20 @@ export function ReadingProgress() {
   useEffect(() => {
     function updateScrollCompletion() {
       const currentProgress = window.scrollY;
-      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-      
+      const scrollHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+
       if (scrollHeight) {
-        setCompletion(Number((currentProgress / scrollHeight).toFixed(2)) * 100);
+        setCompletion(
+          Number((currentProgress / scrollHeight).toFixed(2)) * 100
+        );
       }
     }
 
-    window.addEventListener('scroll', updateScrollCompletion);
-    
+    window.addEventListener("scroll", updateScrollCompletion);
+
     return () => {
-      window.removeEventListener('scroll', updateScrollCompletion);
+      window.removeEventListener("scroll", updateScrollCompletion);
     };
   }, []);
 
@@ -30,4 +33,4 @@ export function ReadingProgress() {
       />
     </div>
   );
-} 
+}
