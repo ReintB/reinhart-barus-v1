@@ -7,9 +7,15 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "Secure Learn",
+    year: 2025,
+    description: "Concepts of encryption & decryption.",
+    url: "https://github.com/ReintB/secure-learn",
+  },
+  {
     title: "Scanalyze",
     year: 2025,
-    description: "Analyze documents with AI",
+    description: "Analyze documents with AI.",
     url: "https://github.com/ReintB/scanalyze",
   },
   {
