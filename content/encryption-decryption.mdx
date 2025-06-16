@@ -1,0 +1,79 @@
+---
+title: "Enkripsi dan Dekripsi"
+publishedAt: "2025-06-16"
+summary: "Pelajari dasar-dasar enkripsi dan dekripsi, jenis-jenisnya, tujuan penggunaannya, serta algoritma yang umum digunakan."
+tags: "Technology, Security, Data"
+---
+
+![Banner SaveRajaAmpat](/images/enkripsiDekripsi.png)
+
+### 📘 Apa Itu Enkripsi?
+
+Enkripsi adalah proses mengubah data yang dapat dibaca (plaintext) menjadi format yang tidak dapat dibaca (ciphertext) menggunakan algoritma dan kunci tertentu. Tujuannya adalah untuk memastikan bahwa hanya pihak yang berwenang yang dapat mengakses informasi tersebut.
+
+### 🔓 Apa Itu Dekripsi?
+
+Dekripsi adalah proses kebalikan dari enkripsi. Proses ini mengubah ciphertext kembali menjadi plaintext menggunakan kunci dan algoritma yang sesuai.
+
+### 🎯 Tujuan Enkripsi
+
+- **Perlindungan Data**: Menjaga data sensitif dari akses yang tidak sah.
+- **Kerahasiaan**: Memastikan informasi hanya dapat diakses oleh pihak yang berwenang.
+- **Integritas**: Memastikan data tidak diubah selama proses pengiriman.
+- **Otentikasi**: Memverifikasi identitas pengirim informasi.
+
+### 🧩 Jenis-Jenis Enkripsi
+
+#### 1. **Enkripsi Simetris**
+
+- Menggunakan **kunci yang sama** untuk proses enkripsi dan dekripsi.
+- Cepat dan efisien.
+- Contoh algoritma:
+  - **AES (Advanced Encryption Standard)**
+  - **DES (Data Encryption Standard)**
+  - **RC4, Blowfish**
+
+#### 2. **Enkripsi Asimetris**
+
+- Menggunakan **kunci publik** untuk enkripsi dan **kunci privat** untuk dekripsi.
+- Lebih lambat, tetapi lebih aman untuk pertukaran kunci dan verifikasi identitas.
+- Contoh algoritma:
+  - **RSA (Rivest–Shamir–Adleman)**
+  - **ECC (Elliptic Curve Cryptography)**
+  - **ElGamal**
+
+#### 3. **Enkripsi Ujung-ke-Ujung (End-to-End Encryption / E2EE)**
+
+- Sistem di mana hanya pengirim dan penerima yang dapat membaca pesan.
+- Umum digunakan pada aplikasi pesan seperti WhatsApp dan Signal.
+- Biasanya menggunakan enkripsi asimetris untuk pertukaran kunci dan enkripsi simetris untuk isi pesan.
+
+### ✅ Kelebihan Enkripsi
+
+- Menjaga komunikasi dan penyimpanan data tetap aman
+- Melindungi privasi pengguna
+- Meningkatkan kepercayaan dalam sistem digital
+
+### ⚠️ Kekurangan Enkripsi
+
+- Membutuhkan sumber daya komputasi lebih besar
+- Kompleksitas dalam pengelolaan kunci
+- Risiko jika kunci hilang atau dicuri
+
+### 🔎 Penggunaan Umum Enkripsi
+
+- Mengamankan email dan pesan (misalnya E2EE)
+- Protokol HTTPS pada website (SSL/TLS)
+- Enkripsi database dan penyimpanan file
+- Melindungi kata sandi dan token pengguna
+
+### 🔗 Coba Website Interaktif Enkripsi
+
+Penulis telah membuat sebuah website edukatif mengenai enkripsi dan dekripsi yang dapat kamu akses secara gratis. Di dalamnya terdapat materi pembelajaran serta **tools interaktif** untuk mencoba algoritma enkripsi seperti **Caesar Cipher**, **AES**, dan **RSA**.
+
+- 💻 **Source code**: [https://github.com/ReintB/secure-learn](https://github.com/ReintB/secure-learn)
+- 🚀 **Live website**: [https://secure-learn.vercel.app/](https://secure-learn.vercel.app/)
+
+### 📌 Kesimpulan
+
+Enkripsi dan dekripsi adalah konsep dasar dalam keamanan informasi. Memahami jenis-jenis dan algoritmanya akan membantu memilih pendekatan terbaik dalam melindungi data secara digital.
